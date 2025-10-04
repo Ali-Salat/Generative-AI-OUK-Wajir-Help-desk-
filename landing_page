@@ -1,0 +1,26 @@
+walker entry {
+    spawn wajir_helpdesk;
+    visit wajir_helpdesk;
+}
+
+walker init_page {
+    report "🌐 Welcome to Wajir ICT Help Desk System!";
+    report "------------------------------------------";
+    report "📌 Services Available:";
+    report "- 🛠️ Submit a Ticket";
+    report "- 📊 Track Issue Status";
+    report "- 📞 Contact Support";
+    report "- 📚 Knowledge Base";
+    report "------------------------------------------";
+    report "🔐 Login | 📝 Register";
+    report "Thank you for using our system!";
+}
+
+node wajir_helpdesk {
+    has str title = "Wajir ICT Help Desk System";
+    has str description = "Your one-stop solution for ICT support in Wajir County.";
+    has list[str] services = ["Submit Ticket", "Track Status", "Contact Support", "Knowledge Base"];
+    has list[str] actions = ["Login", "Register"];
+
+    can init_page;
+}
